@@ -1,13 +1,17 @@
-
-
 window.onload = () => {
     const RESULT_ELEMENT = document.getElementById("result");
-    var has_new_js_framework = true;
+    var has_new_js_framework = 0;
+    let current_time_left = 10;
+    
+    const MAX_TIME = 10;
 
     setInterval(function () {
-        if (Math.random()>0.5) {
-            has_new_js_framework = !has_new_js_framework;
-        } else {
+
+        if(has_new_js_framework >= current_time_left){
+            current_time_left = Math.random() * MAX_TIME;
+            has_new_js_framework = 0;
+            //console.log(current_time_left);
+        } else{
             has_new_js_framework++;
         }
 
