@@ -1,20 +1,19 @@
 window.onload = () => {
     const RESULT_ELEMENT = document.getElementById("result");
-    var has_new_js_framework = 0;
-    let current_time_left = 10;
+    var time_counter = 0;
+    let time_to_next = 10;
     
     const MAX_TIME = 10;
 
     setInterval(function () {
 
-        if(has_new_js_framework >= current_time_left){
-            current_time_left = Math.random() * MAX_TIME;
-            has_new_js_framework = 0;
-            //console.log(current_time_left);
+        if(time_counter >= time_to_next){
+            time_to_next = Math.random() * MAX_TIME;
+            time_counter = 0;
         } else{
-            has_new_js_framework++;
+            time_counter++;
         }
 
-        RESULT_ELEMENT.innerHTML = `${+has_new_js_framework}s`
+        RESULT_ELEMENT.innerHTML = `${+time_counter}s`
     }, 1000);
 }
